@@ -19,6 +19,7 @@ RUN pip install \
     pytest \
     pytest-cov \
     pytest-mock \
+    pytest-watch \
     boto3
 
 RUN echo "alias ll='ls -alFh --color=auto'" >> /root/.bashrc
