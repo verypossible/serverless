@@ -1,4 +1,4 @@
-FROM node
+FROM node:8.1.0
 
 ENV SERVERLESS_VERSION 1.14.0
 
