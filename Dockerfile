@@ -1,14 +1,11 @@
-FROM node:8.1.0
+FROM python:3.6.1
 
 ENV SERVERLESS_VERSION 1.17.0
 
-RUN npm install serverless@${SERVERLESS_VERSION} -g
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN apt-get install -y nodejs
 
-RUN apt-get update
-RUN apt-get install -y \
-    build-essential \
-    curl \
-    python-dev
+RUN npm install serverless@${SERVERLESS_VERSION} -g
 
 RUN mkdir /root/.aws
 
