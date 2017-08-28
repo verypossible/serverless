@@ -14,7 +14,7 @@ py2 :
 
 py3 :
 	docker build \
-		-t $(NAME)-python3:$(VERSION) \
+		-t $(NAME):$(VERSION)-python3 \
 		-f Dockerfile-python3 \
 		--build-arg SERVERLESS_VERSION=$(VERSION) \
 		.
