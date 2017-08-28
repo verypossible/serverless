@@ -16,7 +16,9 @@ RUN pip install \
     boto3
 
 ARG SERVERLESS_VERSION
-RUN npm install serverless@${SERVERLESS_VERSION} -g
+RUN npm install -g \
+    serverless@${SERVERLESS_VERSION} \
+    yarn
 
 RUN echo "alias ll='ls -alFh --color=auto'" >> /root/.bashrc
 RUN echo "alias l='ls -alFh --color=auto'" >> /root/.bashrc
