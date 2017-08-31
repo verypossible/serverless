@@ -1,4 +1,4 @@
 #!/bin/bash
 docker build \
-        --build-arg SERVERLESS_VERSION=1.20.0 \
+        --build-arg SERVERLESS_VERSION=1.21.0 \
         -t $IMAGE_NAME .

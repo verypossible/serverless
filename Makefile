@@ -1,5 +1,5 @@
 NAME = verypossible/serverless
-VERSION = 1.19.0
+VERSION = 1.21.0
 
 .PHONY:	all py2 py3 shell
 
