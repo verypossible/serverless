@@ -1,7 +1,9 @@
 FROM python:2.7.13
 
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
-RUN apt-get install -y nodejs
+RUN apt-get install -y \
+    groff \
+    nodejs
 
 RUN mkdir /root/.aws
 
