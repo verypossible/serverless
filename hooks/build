@@ -1,4 +1,15 @@
 #!/bin/bash
+DOCKERFILE=Dockerfile
+
+echo "Building $CACHE_TAG using build hook!"
+
+if [[ $CACHE_TAG == *"python3"* ]]; then
+    DOCKERFILE=Dockerfile-python3
+fi
+
+echo "Using $DOCKERFILE for build"
+
 docker build \
-        --build-arg SERVERLESS_VERSION=1.21.0 \
+        --build-arg SERVERLESS_VERSION=1.20.0 \
+        -f $DOCKERFILE \
         -t $IMAGE_NAME .
