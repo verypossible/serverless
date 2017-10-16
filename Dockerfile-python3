@@ -11,6 +11,7 @@ RUN curl -s https://bootstrap.pypa.io/get-pip.py | python
 RUN pip install \
     awscli \
     pep8 \
+    pipenv \
     pytest \
     pytest-cov \
     pytest-mock \
