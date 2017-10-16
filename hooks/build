@@ -10,6 +10,6 @@ fi
 echo "Using $DOCKERFILE for build"
 
 docker build \
-        --build-arg SERVERLESS_VERSION=1.22.0 \
+        --build-arg SERVERLESS_VERSION=1.23.0 \
         -f $DOCKERFILE \
         -t $IMAGE_NAME .
