@@ -20,8 +20,10 @@ RUN pip install \
 
 ARG SERVERLESS_VERSION
 RUN npm install -g \
-    serverless@${SERVERLESS_VERSION} \
-    yarn
+    serverless@${SERVERLESS_VERSION}
+
+ARG YARN_VERSION
+RUN curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version ${YARN_VERSION}
 
 RUN echo "alias ll='ls -alFh --color=auto'" >> /root/.bashrc
 RUN echo "alias l='ls -alFh --color=auto'" >> /root/.bashrc
