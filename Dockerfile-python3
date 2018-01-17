@@ -28,5 +28,8 @@ RUN curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version ${YARN_VER
 RUN echo "alias ll='ls -alFh --color=auto'" >> /root/.bashrc
 RUN echo "alias l='ls -alFh --color=auto'" >> /root/.bashrc
 
+# assuming that your serverless python libs live here
+RUN echo "export PYTHONPATH=/code/serverless/lib" >> /root/.bashrc
+
 RUN mkdir /code
 WORKDIR /code
