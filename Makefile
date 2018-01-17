@@ -23,5 +23,8 @@ py3 :
 		--build-arg YARN_VERSION=$(YARN_VERSION) \
 		.
 
-shell :
+py2-shell :
 	docker run --rm -it $(NAME):$(VERSION) bash
+
+py3-shell :
+	docker run --rm -it $(NAME):$(VERSION)-python3 bash
