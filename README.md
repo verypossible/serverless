@@ -11,10 +11,19 @@ using `--build-arg` during the `docker build` command.  To pass this
 argument, we need a Docker Cloud build hook which resides in
 `hooks/build`.
 
+# Instructions for updating versions
+
 In order to bump the Serverless version, the only real requirement is
 to change the version in the `hooks/build` file.  The `Makefile` also
-has references to the Serverless version, but this is really for
-testing the build locally.
+has references to the Serverless version, _but this is really for
+testing the build locally_.
+
+My workflow is usually:
+
+- Update versions in `Makefile` and run `make build`
+- If the build works, update the versions in `hooks/build`
+- Create PR
+- On merge to `master`, Docker Hub will do the builds automatically.
 
 See the following for more information on Docker Cloud build hooks:
 
