@@ -3,14 +3,10 @@ DOCKERFILE=Dockerfile
 
 echo "Building $CACHE_TAG using build hook!"
 
-if [[ $CACHE_TAG == *"python2"* ]]; then
-    DOCKERFILE=Dockerfile-python2
-fi
-
 echo "Using $DOCKERFILE for build"
 
 docker build \
-        --build-arg SERVERLESS_VERSION=1.29.0 \
-        --build-arg YARN_VERSION=1.6.0 \
+        --build-arg SERVERLESS_VERSION=1.35.1 \
+        --build-arg YARN_VERSION=1.12.3 \
         -f $DOCKERFILE \
         -t $IMAGE_NAME .

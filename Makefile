@@ -1,19 +1,11 @@
 NAME = verypossible/serverless
-SERVERLESS_VERSION = 1.29.0
-YARN_VERSION = 1.6.0
+SERVERLESS_VERSION = 1.35.1
+YARN_VERSION = 1.12.3
 
-.PHONY:	all py2 py3 shell
+.PHONY:	all py3 shell
 
 
-all : py2 py3
-
-py2 :
-	docker build \
-		-t $(NAME):$(SERVERLESS_VERSION)-python2 \
-		-f Dockerfile-python2 \
-		--build-arg SERVERLESS_VERSION=$(SERVERLESS_VERSION) \
-		--build-arg YARN_VERSION=$(YARN_VERSION) \
-		.
+all : py3
 
 py3 :
 	docker build \
@@ -22,9 +14,6 @@ py3 :
 		--build-arg SERVERLESS_VERSION=$(SERVERLESS_VERSION) \
 		--build-arg YARN_VERSION=$(YARN_VERSION) \
 		.
-
-py2-shell :
-	docker run --rm -it $(NAME):$(SERVERLESS_VERSION)-python2 bash
 
 py3-shell :
 	docker run --rm -it $(NAME):$(SERVERLESS_VERSION) bash
