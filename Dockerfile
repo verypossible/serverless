@@ -1,17 +1,17 @@
-FROM python:3.6.6
+FROM python:3.7.3
 
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install -y \
     groff \
     nodejs
 
 RUN mkdir /root/.aws
 
-RUN curl -s https://bootstrap.pypa.io/get-pip.py | python
 RUN pip install \
     awscli \
     pep8 \
     pipenv \
+    poetry \
     pytest \
     pytest-cov \
     pytest-mock \
@@ -24,12 +24,6 @@ RUN npm install -g \
 
 ARG YARN_VERSION
 RUN curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version ${YARN_VERSION}
-
-RUN echo "alias ll='ls -alFh --color=auto'" >> /root/.bashrc
-RUN echo "alias l='ls -alFh --color=auto'" >> /root/.bashrc
-
-# assuming that your serverless python libs live here
-RUN echo "export PYTHONPATH=/code/serverless/lib" >> /root/.bashrc
 
 RUN mkdir /code
 WORKDIR /code

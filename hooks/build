@@ -7,6 +7,6 @@ echo "Using $DOCKERFILE for build"
 
 docker build \
         --build-arg SERVERLESS_VERSION=1.35.1 \
-        --build-arg YARN_VERSION=1.12.3 \
+        --build-arg YARN_VERSION=1.15.2 \
         -f $DOCKERFILE \
         -t $IMAGE_NAME .
