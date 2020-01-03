@@ -1,5 +1,5 @@
 NAME = verypossible/serverless
-SERVERLESS_VERSION = 1.35.1
+SERVERLESS_VERSION = 1.60.4
 YARN_VERSION = 1.12.3
 
 .PHONY:	all py3 shell
