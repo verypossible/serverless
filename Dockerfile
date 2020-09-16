@@ -3,7 +3,9 @@ FROM python:3.6.6
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install -y \
     groff \
-    nodejs
+    nodejs \
+    postgresql \
+    libpq-dev
 
 RUN mkdir /root/.aws
 
